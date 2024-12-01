@@ -11,7 +11,15 @@ fn main() {
         let input = std::fs::read(input_path).expect("sorry about this expect hehe");
 
         let parsed_input = challenge.parse(&input);
-        let output = challenge.solve(&parsed_input);
-        println!("{}: {:?}", challenge.name(), output);
+        println!(
+            "{} - part 1: {:?}",
+            challenge.name(),
+            challenge.solve_part_1(&parsed_input)
+        );
+        println!(
+            "{} - part 2: {:?}",
+            challenge.name(),
+            challenge.solve_part_2(&parsed_input)
+        );
     }
 }
